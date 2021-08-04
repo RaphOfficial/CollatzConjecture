@@ -1,58 +1,28 @@
 # Includes
 import matplotlib.pyplot as plt
+from libs import utils
+from libs import loops
 
 
-def odd_or_even(int_value):
-    # This function defines if a number is odd or even
-    # Var
-    int_value = int(int_value)
-
-    if (int_value % 2) == 0:
-        output = False
-    else:
-        output = True
-    return output
-
-    # Possible outputs:
-    # False = Number is even
-    # True = Number is odd
-
-
-def make_line_chart(y_list, auto_assignment):
-    if auto_assignment:
-        # Vars
-        x_axis = []
-        y_count = 0
-
-        for numbs in y_list:
-            y_count += 1
-            x_axis.append(y_count)
-    else:
-        print("Not supported in this version of the file.")
-        return -1
-    # Vars
-    y_axis = y_list
-    plt.plot(x_axis, y_axis)
+def make_line_chart(y_list, x_list):
+    plt.plot(x_list, y_list)
     plt.show()
 
 
-# Vars
-looping = True
 numb = int(input('Please choose any positive integer: '))
-x = numb
-number_list = []
 
-while looping:
-    number_list.append(x)
-    x_odd = odd_or_even(x)
-    if x == 1:
-        looping = False
-        continue
-        # Breaks the loop
+if utils.is_positive(numb):
+    numb_sequence = loops.positive_integer(numb)
+else:  # If is negative or 0
+    numb_sequence = loops.negative_integer(numb)
 
-    if x_odd:  # If x is odd
-        x = x * 3 + 1
-    else:  # If x is even
-        x = int(x/2)
+sequence_details = loops.get_details(numb_sequence, True)
 
-make_line_chart(number_list, True)
+x_axis = sequence_details[2]
+biggest_number = sequence_details[1]
+numbers_amount = sequence_details[0]
+
+print('This is the biggest number in the sequence: '+str(biggest_number))
+print('This is the total amount of numbers in your sequence: ' + str(numbers_amount))
+
+make_line_chart(numb_sequence, x_axis)
