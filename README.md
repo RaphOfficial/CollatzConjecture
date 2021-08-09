@@ -26,7 +26,7 @@ Once you have done it you can get the Collatz Conjecture very easily, in this wa
 <br>
 Input
 ```` 
-    output = main.calculate_collatz_conjecture(seed)
+output = main.calculate_collatz_conjecture(seed)
 ```` 
 
 Output
