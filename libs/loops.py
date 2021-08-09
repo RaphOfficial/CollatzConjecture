@@ -45,7 +45,7 @@ def negative_integer(x):
     return number_list
 
 
-def get_details(x, get_x_axis):
+def get_details(x, get_y_axis):
     # Vars
     biggest_number = 0
     amount = 0
@@ -64,7 +64,7 @@ def get_details(x, get_x_axis):
             if numb > biggest_number:
                 biggest_number = numb
 
-    if get_x_axis:
+    if get_y_axis:
         # Var
         x_axis = []
 
@@ -81,10 +81,10 @@ def get_details(x, get_x_axis):
     return output
     # Possible outputs:
 
-    # If get_x_axis = false:
+    # If get_y_axis = false:
     # [amount, biggest_number]
 
-    # If get_x_axis = true:
+    # If get_y_axis = true:
     # [amount, biggest_number, x_axis]
 
     # amount = amount of numbers inside x
