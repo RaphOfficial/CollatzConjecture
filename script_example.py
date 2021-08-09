@@ -1,8 +1,9 @@
 # This is a script example for main.py (Collatz Conjecture Calculator).
-# This script will calculate the Collatz Conjecture's sequence of every number starting from 0.
+# This script will calculate the Collatz Conjecture's 
+# sequence of every number starting from 0.
 # Obviously, the only limit will be the time we let the script run.
 
-# Imports``
+# Imports
 import main  # Firstly, we have to import main.py
 from time import sleep  # This will only needed to add a delay between calculations.
 
@@ -50,13 +51,15 @@ try:  # Run the loop, in case of keyboard interrupt (Ctrl+C) stop the loop
     while valid_selection:
         # Let's use calculate_collatz_conjecture from main.py! Result will be stored in 'result' variable
         result = main.calculate_collatz_conjecture(current_seed)
-        # This is output format: [numbers_amount, biggest_number, chart_details] see main.py for details!
+        # This is output format: [numbers_amount, biggest_number, chart_details] 
+        # see main.py for details!
         numbers_amount = result[0]
         biggest_number = result[1]
         print("Calculated seed N" + str(current_seed) + ". Amo: " + str(numbers_amount) + " - Bgst: " +
               str(biggest_number))
         if numbers_amount > amo[1]:
-            # If in the sequence there are a higher number amount then in the best amount score
+            # If in the sequence there are a higher number amount then in the best 
+            # amount score
             amo = (current_seed, numbers_amount)  # New amount score = this sequence
         if positive:  # If range of numbers is positive +
             if biggest_number > bgst[1]:
